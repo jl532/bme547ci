@@ -8,7 +8,8 @@ import re
 
 
 def is_tachycardic(inputString):
-    loweredInput = str.lower(inputString)
+    rmPuncInput = re.sub(r'[^\w\s]','',inputString)
+    loweredInput = str.lower(rmPuncInput)
     if loweredInput == "tachycardic":
         output = True
     else:
