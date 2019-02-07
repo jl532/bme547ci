@@ -22,14 +22,13 @@ import pytest
         (" T4chycardic", True),
         (" Tacycard1c", True),
 ])
-
-
 def test_is_tachycardic(inputString, expected):
     from tachycardia import is_tachycardic
 
     isTachycardicTest = is_tachycardic(inputString)
     assert isTachycardicTest == expected
-    
+
+
 @pytest.mark.parametrize("testString, targetString, expected", [
         ("jason liu", "tachycardic", False),
         ("tachycrdic", "tachycardic", True),
@@ -38,13 +37,14 @@ def test_is_tachycardic(inputString, expected):
         ("tachycard1c", "tachycardic", True),
         ("t4chycard1c", "tachycardic", True),
         ("tchycardc", "tachycardic", True),
-        ("tachycard", "tachycardic", True),        
-        ("cidracyhcat", "tachycardic", False)
+        ("tachycard", "tachycardic", True),
+        ("cidracyhcat", "tachycardic", False),
+        ("tachycidra", "tachycardic", False),
+        ("thcaycardia", "tachycardic", False),
+        ("tachycard", "tachycardic", True),
 ])
-    
-    
 def test_string_tolerance(testString, targetString, expected):
     from tachycardia import string_tolerance
-    
+
     string_tolerance_test = string_tolerance(testString, targetString)
     assert string_tolerance_test == expected
