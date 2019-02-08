@@ -23,20 +23,24 @@ def string_tolerance(inputString, targetString):  # identify missing characters
         return False
     else:
         diffLists = (list(set(targetString) - set(inputString)))
-        if len(diffLists) < 4:  # 4 set differences at most
+        if len(diffLists) <= 4:  # 4 set differences at most (substitutions)
             return max_overlap_finder(inputString, targetString)
         else:
             return False
+
+
+def string_delCharAtPos(inStr, pos):
+    return inStr[:pos] + inStr[pos + 1:]
 
 
 def string_slicer_two(inStr):
     possibleSlices = []
     possibleSlices.append(inStr)
     for firstPos in range(len(inStr)):
-        singleSlice = inStr[:firstPos] + inStr[firstPos + 1:]
+        singleSlice = string_delCharAtPos(inStr, firstPos)
         possibleSlices.append(singleSlice)
-        for secondPos in range(len(inStr)-firstPos):
-            doubleSlice = singleSlice[:secondPos] + singleSlice[secondPos + 1:]
+        for secondPos in range(len(singleSlice)):
+            doubleSlice = string_delCharAtPos(singleSlice, secondPos)
             if doubleSlice not in possibleSlices:
                 possibleSlices.append(doubleSlice)
     return possibleSlices
@@ -53,13 +57,19 @@ def max_overlap_finder(inputString, targetString):
                     overlap = overlap + 1
             if overlap > globalBestOverlap:
                 globalBestOverlap = overlap
-    if globalBestOverlap >= len(targetString) - 2:
+    print(globalBestOverlap)
+    if globalBestOverlap >= len(targetString) - 2:  # 2 max substitutions
         return True
     else:
         return False
 
 
 def main():
+    testString = input("Please enter a string to compare to 'tachycardic': ")
+    if is_tachycardic(testString):
+        print(testString + " is a close match to 'tachycardic'")
+    else:
+        print(testString + " is not a close match to 'tachycardic'")
     pass
 
 
