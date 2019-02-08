@@ -48,3 +48,24 @@ def test_string_tolerance(testString, targetString, expected):
 
     string_tolerance_test = string_tolerance(testString, targetString)
     assert string_tolerance_test == expected
+
+# needed to place the output in a separate list declaration
+# because it wouldn't fit in one line.
+
+slice1234Output = [
+        '1234',
+        '234', '34', '24', '23',
+        '134', '14', '13',
+        '124', '123'
+]
+
+
+@pytest.mark.parametrize("inputStr, expected", [
+        ("123", ['123', '23', '3', '2', '13', '1', '12']),
+        ("1234", slice1234Output),
+])
+def test_string_slicer_two(inputStr, expected):
+    from tachycardia import string_slicer_two
+
+    slicer_output_test = string_slicer_two(inputStr)
+    assert slicer_output_test == expected

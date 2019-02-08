@@ -3,8 +3,8 @@ Developed by Jason Liu
 ## Installation and Usage Instructions
 1. Clone this repository onto your local machine using your Git Bash terminal: `git clone https://github.com/jl532/bme547ci`
 2. Create a virtual environment with the required packages found in `requirements.txt`
-* **NOTE:** `tachycardic.py` requires the Regex package `re`, so either use a virtual environment following `requirements.txt` or install this package first with `python -m pip install re`
-* Run the code with `python tachycardic.py`
+* **NOTE:** `tachycardia.py` requires the Regex package `re`, so either use a virtual environment following `requirements.txt` or install this package first with `python -m pip install re`
+* Run the code with `python tachycardia.py`
 * Input a String to compare against the string "tachycardic"
 ## Specifications  
 The function is_tachycardic within tachycardic.py does the following:
