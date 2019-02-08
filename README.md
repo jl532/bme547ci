@@ -1,5 +1,11 @@
-# bme547ci
-
+# bme547ci - a demonstration of unit testing and continous integration using Travis CI
+Developed by Jason Liu
+## Installation and Usage Instructions
+1. Clone this repository onto your local machine using your Git Bash terminal: `git clone https://github.com/jl532/bme547ci`
+2. Create a virtual environment with the required packages found in `requirements.txt`
+* **NOTE:** `tachycardia.py` requires the Regex package `re`, so either use a virtual environment following `requirements.txt` or install this package first with `python -m pip install re`
+* Run the code with `python tachycardia.py`
+* Input a String to compare against the string "tachycardic"
 ## Specifications  
 The function is_tachycardic within tachycardic.py does the following:
 * It should take a string argument as input.
@@ -15,3 +21,4 @@ The function is_tachycardic within tachycardic.py does the following:
 * Appropriate naming and syntax for unit tests
 * Appropriate use of virutal environments  
 **Additionally, is_tachycardic is tolerant to close representations of the word tachycardic. For example, it should be able to tolerate 1 to 2 missing letters (ex. tachycrdic) and/or 1 to 2 misspelled letters (ex. tachycard1c)**
+
