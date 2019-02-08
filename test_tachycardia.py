@@ -21,7 +21,6 @@ import pytest
         (" achycardic ", True),
         (" T4chycardic", True),  # substitutions
         (" Tacycard1c", True),  # combination of delection and substitution
-        (" t4chc4rdc", True),  # worst case two substitutions and two deletions
 ])
 def test_is_tachycardic(inputString, expected):
     from tachycardia import is_tachycardic
